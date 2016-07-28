@@ -83,6 +83,13 @@ sc create GoAgent2 binPath= "\"C:\Program Files\Go Agent2\cruisewrapper.exe\" -s
 - Repeat this process for more agents. Just change the suffix "1" to "2" and so
   on.
 
+## Uninstalling agents in Linux (RPM and DEB)
+- Deleting agents from go server UI does not remove agent folders created as part of the above script.
+- To completely remove traces of, say agent-1, execute the following script
+```
+sudo /etc/init.d/go-agent-1 stop && sudo rm -rf /etc/init.d/go-agent-1 /usr/share/go-agent-1 /etc/default/go-agent-1 /var/{lib,log}/go-agent-1
+```
+
 ## Linux (non-RPM, non-DEB and other UNIXes)
 
 -   [Install your first agent with the installer](../installation/installing_go_agent.md)
